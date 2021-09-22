@@ -9,7 +9,8 @@ namespace Altaliza.DAL.Constraints
         {
             base.Configure(builder);
 
-            builder.Property(category => category.Name)
+            builder
+                .Property(category => category.Name)
                 .IsRequired()
                 .HasMaxLength(255);
 

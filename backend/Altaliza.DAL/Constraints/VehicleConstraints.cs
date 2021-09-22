@@ -9,20 +9,25 @@ namespace Altaliza.DAL.Constraints
         {
             base.Configure(builder);
 
-            builder.Property(vehicle => vehicle.Name)
+            builder
+                .Property(vehicle => vehicle.Name)
                 .IsRequired()
                 .HasMaxLength(255);
 
-            builder.Property(vehicle => vehicle.Price1Day)
+            builder
+                .Property(vehicle => vehicle.Price1Day)
                 .IsRequired();
 
-            builder.Property(vehicle => vehicle.Price7Days)
+            builder
+                .Property(vehicle => vehicle.Price7Days)
                 .IsRequired();
 
-            builder.Property(vehicle => vehicle.Price15Days)
+            builder
+                .Property(vehicle => vehicle.Price15Days)
                 .IsRequired();
 
-            builder.Property(vehicle => vehicle.Stock)
+            builder
+                .Property(vehicle => vehicle.Stock)
                 .IsRequired();
         }
     }

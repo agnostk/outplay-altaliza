@@ -9,11 +9,13 @@ namespace Altaliza.DAL.Constraints
         {
             base.Configure(builder);
 
-            builder.Property(character => character.Name)
+            builder
+                .Property(character => character.Name)
                 .IsRequired()
                 .HasMaxLength(255);
 
-            builder.Property(character => character.Wallet)
+            builder
+                .Property(character => character.Wallet)
                 .IsRequired();
         }
     }

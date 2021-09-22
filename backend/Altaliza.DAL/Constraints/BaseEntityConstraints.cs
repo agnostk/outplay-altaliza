@@ -8,7 +8,8 @@ namespace Altaliza.DAL.Constraints
     {
         public virtual void Configure(EntityTypeBuilder<TBase> builder)
         {
-            builder.HasKey(k => k.Id);
+            builder
+                .HasKey(k => k.Id);
         }
     }
 }
