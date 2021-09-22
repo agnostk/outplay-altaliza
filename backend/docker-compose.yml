@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  altaliza-mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "altaliza"
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysqldbdata:/var/lib/mysql
+    networks:
+      - altaliza-network
+
+  altaliza-adminer:
+    image: adminer
+    environment:
+      ADMINER_DEFAULT_SERVER: altaliza-mysql
+      ADMINER_DESIGN: dracula
+    ports:
+      - 8080:8080
+    networks:
+      - altaliza-network
+
+networks:
+  altaliza-network:
+    driver: bridge

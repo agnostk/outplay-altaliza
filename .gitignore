@@ -14,3 +14,6 @@ obj/
 *.exe
 *.dll
 *.nupkg
+
+# Database
+mysqldbdata/
