@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Altaliza.Core.Entities
 {
     public class Vehicle : BaseEntity
@@ -9,5 +11,6 @@ namespace Altaliza.Core.Entities
         public decimal Price1Day { get; set; }
         public decimal Price7Days { get; set; }
         public decimal Price15Days { get; set; }
+        public List<CharacterVehicle> CharacterVehicles { get; set; }
     }
 }
