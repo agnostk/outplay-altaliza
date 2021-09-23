@@ -16,7 +16,8 @@ namespace Altaliza.DAL.Constraints
 
             builder
                 .Property(character => character.Wallet)
-                .IsRequired();
+                .IsRequired()
+                .HasPrecision(12, 2);
         }
     }
 }
