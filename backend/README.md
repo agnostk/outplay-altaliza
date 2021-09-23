@@ -1,4 +1,4 @@
-Utilize o seguinte comando para criar o banco MySQL será utilizando o ***Docker***:
+Utilize o seguinte comando para criar o banco MySQL utilizando o ***Docker***:
 
 ```docker-compose up -d```
 
