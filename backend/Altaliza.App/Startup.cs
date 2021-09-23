@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Altaliza.DAL;
+using Altaliza.DAL.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +30,7 @@ namespace Altaliza.App
         {
             string mySqlConnection = Configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<AppDbContext>(
+            services.AddDbContext<MySQLContext>(
                 options => options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection))
             );
 

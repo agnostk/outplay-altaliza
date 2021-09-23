@@ -3,11 +3,11 @@ using Altaliza.Core.Entities;
 using Altaliza.DAL.Constraints;
 using Microsoft.EntityFrameworkCore;
 
-namespace Altaliza.DAL
+namespace Altaliza.DAL.Contexts
 {
-    public class AppDbContext : DbContext
+    public class MySQLContext : DbContext
     {
-        public AppDbContext(DbContextOptions options) : base(options) { }
+        public MySQLContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Character> Characters { get; set; }
         public DbSet<Vehicle> Vehicle { get; set; }
