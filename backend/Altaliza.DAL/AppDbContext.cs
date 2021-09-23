@@ -67,6 +67,10 @@ namespace Altaliza.DAL
                 new Vehicle { Id = 29, CategoryId = 10, Name = "Bison", Stock = 2, Image = "/vehicles/van/bison.png", Price1Day = 90m, Price7Days = 540m, Price15Days = 1000m },
                 new Vehicle { Id = 30, CategoryId = 10, Name = "Surfer", Stock = 3, Image = "/vehicles/van/surfer.png", Price1Day = 40m, Price7Days = 200m, Price15Days = 370m },
             });
+
+            modelBuilder.Entity<Character>().HasData(new List<Character> {
+                new Character { Id = 1, Name = "Fulano de Tal", Wallet = 250000 }
+            });
         }
     }
 }
