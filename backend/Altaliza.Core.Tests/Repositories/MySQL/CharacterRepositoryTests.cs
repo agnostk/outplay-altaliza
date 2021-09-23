@@ -5,10 +5,10 @@ using Altaliza.DAL.Repositories.MySQL;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace Altaliza.Core.Tests
+namespace Altaliza.Core.Tests.Repositories.MySQL
 {
     [TestFixture]
-    public class MySQLRepositoryTests
+    public class CharacterRepositoryTests
     {
         private MySQLContext context;
         private CharacterRepository repository;
@@ -29,10 +29,11 @@ namespace Altaliza.Core.Tests
         [Test]
         public void SelectCharacter()
         {
-            Character character = repository.GetOne(1);
+            int id = 1;
 
-            Assert.AreEqual(repository.GetAll().Count(), 1);
-            Assert.AreEqual(character.Id, 1);
+            Character character = repository.GetOne(id);
+
+            Assert.AreEqual(character.Id, id);
             Assert.AreEqual(character.Name, "Fulano de Tal");
         }
 
@@ -94,7 +95,7 @@ namespace Altaliza.Core.Tests
 
             repository.Commit();
 
-            Character deletedCharacter = repository.GetOne(2);
+            Character deletedCharacter = repository.GetOne(id);
 
             Assert.IsNull(deletedCharacter);
         }
