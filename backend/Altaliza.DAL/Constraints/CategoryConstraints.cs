@@ -14,9 +14,14 @@ namespace Altaliza.DAL.Constraints
                 .IsRequired()
                 .HasMaxLength(255);
 
-            builder.Property(category => category.Description)
+            builder
+            .Property(category => category.Description)
                 .IsRequired()
                 .HasMaxLength(1000);
+
+            builder
+                .HasMany(category => category.Vehicles)
+                .WithOne(vehicle => vehicle.Category);
         }
     }
 }

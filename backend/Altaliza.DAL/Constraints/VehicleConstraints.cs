@@ -16,14 +16,17 @@ namespace Altaliza.DAL.Constraints
 
             builder
                 .Property(vehicle => vehicle.Price1Day)
+                .HasPrecision(12, 2)
                 .IsRequired();
 
             builder
                 .Property(vehicle => vehicle.Price7Days)
+                .HasPrecision(12, 2)
                 .IsRequired();
 
             builder
                 .Property(vehicle => vehicle.Price15Days)
+                .HasPrecision(12, 2)
                 .IsRequired();
 
             builder
