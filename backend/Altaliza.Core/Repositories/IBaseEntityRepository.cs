@@ -9,6 +9,7 @@ namespace Altaliza.Core.Repositories
         IEnumerable<TBase> GetAll();
         void Create(TBase tBase);
         void Update(TBase tBase);
-        void Delete(TBase tBase);
+        void Delete(int id);
+        int Commit();
     }
 }
