@@ -4,6 +4,7 @@ namespace Altaliza.Core.Entities
 {
     public class Vehicle : BaseEntity
     {
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
         public string Name { get; set; }
         public int Stock { get; set; }
