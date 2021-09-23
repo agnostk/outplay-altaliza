@@ -5,7 +5,7 @@ using Altaliza.DAL.Repositories.MySQL;
 using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 
-namespace Altaliza.Core.Tests.Repositories.MySQL
+namespace Altaliza.DAL.Tests.Repositories.MySQL
 {
     [TestFixture]
     public class VehicleRepositoryTests
