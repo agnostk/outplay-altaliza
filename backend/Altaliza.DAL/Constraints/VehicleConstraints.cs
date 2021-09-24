@@ -15,6 +15,11 @@ namespace Altaliza.DAL.Constraints
                 .HasMaxLength(255);
 
             builder
+                .HasOne(vehicle => vehicle.Category)
+                .WithMany(category => category.Vehicles)
+                .HasForeignKey(vehicle => vehicle.CategoryId);
+
+            builder
                 .Property(vehicle => vehicle.Price1Day)
                 .HasPrecision(12, 2)
                 .IsRequired();

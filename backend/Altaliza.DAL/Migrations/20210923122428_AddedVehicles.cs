@@ -6,49 +6,22 @@ namespace Altaliza.DAL.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Vehicle_Category_CategoryId",
-                table: "Vehicle");
-
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Price7Days",
-                table: "Vehicle",
-                type: "decimal(12,2)",
-                precision: 12,
-                scale: 2,
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(65,30)");
-
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Price1Day",
-                table: "Vehicle",
-                type: "decimal(12,2)",
-                precision: 12,
-                scale: 2,
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(65,30)");
-
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Price15Days",
-                table: "Vehicle",
-                type: "decimal(12,2)",
-                precision: 12,
-                scale: 2,
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(65,30)");
-
-            migrationBuilder.AlterColumn<int>(
-                name: "CategoryId",
-                table: "Vehicle",
-                type: "int",
-                nullable: false,
-                defaultValue: 0,
-                oldClrType: typeof(int),
-                oldType: "int",
-                oldNullable: true);
+            migrationBuilder.InsertData(
+                table: "Category",
+                columns: new[] { "Id", "Description", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Comerciais", "Commercial" },
+                    { 2, "Compactos", "Compact" },
+                    { 3, "Militares", "Military" },
+                    { 4, "Motos", "Motorcycle" },
+                    { 5, "Off-Roads", "Off-Road" },
+                    { 6, "Sedans", "Sedan" },
+                    { 7, "Esportivos", "Sport" },
+                    { 8, "Superesportivos", "Super" },
+                    { 9, "SUVs", "SUV" },
+                    { 10, "Vans", "Van" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Vehicle",
@@ -86,22 +59,10 @@ namespace Altaliza.DAL.Migrations
                     { 29, 10, "/vehicles/van/bison.png", "Bison", 1000m, 90m, 540m, 2 },
                     { 30, 10, "/vehicles/van/surfer.png", "Surfer", 370m, 40m, 200m, 3 }
                 });
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Vehicle_Category_CategoryId",
-                table: "Vehicle",
-                column: "CategoryId",
-                principalTable: "Category",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Vehicle_Category_CategoryId",
-                table: "Vehicle");
-
             migrationBuilder.DeleteData(
                 table: "Vehicle",
                 keyColumn: "Id",
@@ -252,51 +213,55 @@ namespace Altaliza.DAL.Migrations
                 keyColumn: "Id",
                 keyValue: 30);
 
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Price7Days",
-                table: "Vehicle",
-                type: "decimal(65,30)",
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(12,2)",
-                oldPrecision: 12,
-                oldScale: 2);
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 1);
 
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Price1Day",
-                table: "Vehicle",
-                type: "decimal(65,30)",
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(12,2)",
-                oldPrecision: 12,
-                oldScale: 2);
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 2);
 
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Price15Days",
-                table: "Vehicle",
-                type: "decimal(65,30)",
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(12,2)",
-                oldPrecision: 12,
-                oldScale: 2);
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 3);
 
-            migrationBuilder.AlterColumn<int>(
-                name: "CategoryId",
-                table: "Vehicle",
-                type: "int",
-                nullable: true,
-                oldClrType: typeof(int),
-                oldType: "int");
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 4);
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Vehicle_Category_CategoryId",
-                table: "Vehicle",
-                column: "CategoryId",
-                principalTable: "Category",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 5);
+
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 6);
+
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 7);
+
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 8);
+
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 9);
+
+            migrationBuilder.DeleteData(
+                table: "Category",
+                keyColumn: "Id",
+                keyValue: 10);
         }
     }
 }

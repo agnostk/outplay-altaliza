@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Altaliza.DAL.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    [Migration("20210923010631_AddedVehicles")]
+    [Migration("20210923122428_AddedVehicles")]
     partial class AddedVehicles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -114,7 +114,8 @@ namespace Altaliza.DAL.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<decimal>("Wallet")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.HasKey("Id");
 

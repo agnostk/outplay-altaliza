@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Altaliza.DAL.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    [Migration("20210923013424_AddedCharacters")]
+    [Migration("20210923122445_AddedCharacters")]
     partial class AddedCharacters
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

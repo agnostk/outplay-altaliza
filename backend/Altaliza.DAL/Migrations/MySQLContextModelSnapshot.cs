@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Altaliza.DAL.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    partial class MySQLContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

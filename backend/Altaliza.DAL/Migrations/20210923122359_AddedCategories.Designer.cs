@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Altaliza.DAL.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    [Migration("20210922225126_AddedCategories")]
+    [Migration("20210923122359_AddedCategories")]
     partial class AddedCategories
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,68 +38,6 @@ namespace Altaliza.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Comerciais",
-                            Name = "Commercial"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Compactos",
-                            Name = "Compact"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Militares",
-                            Name = "Military"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Motos",
-                            Name = "Motorcycle"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Off-Roads",
-                            Name = "Off-Road"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Sedans",
-                            Name = "Sedan"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "Esportivos",
-                            Name = "Sport"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "Superesportivos",
-                            Name = "Super"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "SUVs",
-                            Name = "SUV"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "Vans",
-                            Name = "Van"
-                        });
                 });
 
             modelBuilder.Entity("Altaliza.Core.Entities.Character", b =>
@@ -114,7 +52,8 @@ namespace Altaliza.DAL.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<decimal>("Wallet")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.HasKey("Id");
 
@@ -151,7 +90,7 @@ namespace Altaliza.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
@@ -163,13 +102,16 @@ namespace Altaliza.DAL.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<decimal>("Price15Days")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<decimal>("Price1Day")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<decimal>("Price7Days")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -203,10 +145,17 @@ namespace Altaliza.DAL.Migrations
             modelBuilder.Entity("Altaliza.Core.Entities.Vehicle", b =>
                 {
                     b.HasOne("Altaliza.Core.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .WithMany("Vehicles")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Altaliza.Core.Entities.Category", b =>
+                {
+                    b.Navigation("Vehicles");
                 });
 
             modelBuilder.Entity("Altaliza.Core.Entities.Character", b =>

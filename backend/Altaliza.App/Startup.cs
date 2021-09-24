@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Altaliza.Core.Repositories;
 using Altaliza.DAL.Contexts;
+using Altaliza.DAL.Repositories.MySQL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +36,15 @@ namespace Altaliza.App
                 options => options.UseMySql(mySqlConnection, ServerVersion.AutoDetect(mySqlConnection))
             );
 
+            services.AddCors(options => options.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+            }));
+
+            services.AddScoped<IVehicleRepository, VehicleRepository>();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -54,6 +65,8 @@ namespace Altaliza.App
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("MyPolicy");
 
             app.UseAuthorization();
 

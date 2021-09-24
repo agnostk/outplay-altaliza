@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Linq;
 using Altaliza.Core.Entities;
 using Altaliza.DAL.Contexts;

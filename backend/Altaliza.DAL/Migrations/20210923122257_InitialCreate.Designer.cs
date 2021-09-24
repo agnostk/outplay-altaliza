@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Altaliza.DAL.Migrations
 {
     [DbContext(typeof(MySQLContext))]
-    [Migration("20210922141012_InitialCreate")]
+    [Migration("20210923122257_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,7 +52,8 @@ namespace Altaliza.DAL.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<decimal>("Wallet")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.HasKey("Id");
 
@@ -89,7 +90,7 @@ namespace Altaliza.DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
@@ -101,13 +102,16 @@ namespace Altaliza.DAL.Migrations
                         .HasColumnType("varchar(255)");
 
                     b.Property<decimal>("Price15Days")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<decimal>("Price1Day")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<decimal>("Price7Days")
-                        .HasColumnType("decimal(65,30)");
+                        .HasPrecision(12, 2)
+                        .HasColumnType("decimal(12,2)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
@@ -141,10 +145,17 @@ namespace Altaliza.DAL.Migrations
             modelBuilder.Entity("Altaliza.Core.Entities.Vehicle", b =>
                 {
                     b.HasOne("Altaliza.Core.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
+                        .WithMany("Vehicles")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("Altaliza.Core.Entities.Category", b =>
+                {
+                    b.Navigation("Vehicles");
                 });
 
             modelBuilder.Entity("Altaliza.Core.Entities.Character", b =>

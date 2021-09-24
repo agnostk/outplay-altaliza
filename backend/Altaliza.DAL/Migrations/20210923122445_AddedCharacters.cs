@@ -6,16 +6,6 @@ namespace Altaliza.DAL.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Wallet",
-                table: "Characters",
-                type: "decimal(12,2)",
-                precision: 12,
-                scale: 2,
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(65,30)");
-
             migrationBuilder.InsertData(
                 table: "Characters",
                 columns: new[] { "Id", "Name", "Wallet" },
@@ -28,16 +18,6 @@ namespace Altaliza.DAL.Migrations
                 table: "Characters",
                 keyColumn: "Id",
                 keyValue: 1);
-
-            migrationBuilder.AlterColumn<decimal>(
-                name: "Wallet",
-                table: "Characters",
-                type: "decimal(65,30)",
-                nullable: false,
-                oldClrType: typeof(decimal),
-                oldType: "decimal(12,2)",
-                oldPrecision: 12,
-                oldScale: 2);
         }
     }
 }
