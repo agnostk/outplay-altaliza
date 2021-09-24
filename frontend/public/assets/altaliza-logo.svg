@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="4.08 22.85 204.256 182.622" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(44.910211, -89.400344, -82.490561, -41.439088, 355.451746, 419.529075)" spreadMethod="pad" id="linearGradient116">
+      <stop style="stop-opacity: 1; stop-color: rgb(217, 162, 51);" offset="0" id="stop108"/>
+      <stop style="stop-opacity: 1; stop-color: rgb(217, 114, 51);" offset="1" id="stop114"/>
+    </linearGradient>
+    <linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(52.976132, 101.672238, 94.912509, -49.453991, 290.941406, 330.276001)" spreadMethod="pad" id="linearGradient140">
+      <stop style="stop-opacity: 1; stop-color: rgb(217, 114, 51);" offset="0" id="stop132"/>
+      <stop style="stop-opacity: 1; stop-color: rgb(217, 162, 51);" offset="1" id="stop138"/>
+    </linearGradient>
+    <linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-104.972379, -48.804534, -40.251109, 86.575043, 400.888799, 391.039287)" spreadMethod="pad" id="linearGradient164">
+      <stop style="stop-opacity: 1; stop-color: rgb(217, 162, 51);" offset="0" id="stop156"/>
+      <stop style="stop-opacity: 1; stop-color: rgb(217, 114, 51);" offset="1" id="stop162"/>
+    </linearGradient>
+  </defs>
+  <g id="g10" transform="matrix(1.277, 0, 0, -1.277, -159.680557, 633.523071)" style="">
+    <g id="g96" transform="matrix(1, 0, 0, 1, -130.500168, 15.748884)">
+      <g id="g98">
+        <g id="g104">
+          <g id="g106">
+            <path d="m 355.584,427.374 -5.386,-3.836 50.3,-99.91 h 7.119 z" style="fill:url(#linearGradient116);stroke:none" id="path118"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="g120" transform="matrix(1, 0, 0, 1, -130.500168, 15.748884)">
+      <g id="g122">
+        <g id="g128">
+          <g id="g130">
+            <path d="M 356.147 426.254 L 343.077 454.006 L 277.054 323.628 L 300.553 323.261 L 356.147 426.254 Z" style="fill: url(#linearGradient140); stroke: none; fill-rule: nonzero;" id="path142"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="g144" transform="matrix(1, 0, 0, 1, -130.500168, 15.748884)">
+      <g id="g146">
+        <g id="g152">
+          <g id="g154">
+            <path d="m 328.072,374.602 -27.641,-50.974 c 0,0 49.288,64.863 107.186,64.239 v 0 c 0,0 -5.519,0.422 -13.871,0.422 v 0 c -17.678,0 -48.051,-1.892 -65.674,-13.687" style="fill:url(#linearGradient164);stroke:none" id="path166"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
